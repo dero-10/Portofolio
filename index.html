@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portofolio Darren Keith Kho — tugas lab web, Android, dan game UI.">
+  <title>DERO // Proxy Portfolio</title>
+  <link rel="icon" href="assets/img/profile.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Lewati ke konten</a>
+
+  <!-- ===== BOOT SCREEN ===== -->
+  <div class="boot" id="boot" aria-hidden="true">
+    <div class="boot__inner">
+      <p class="boot__label">DERO // PROXY</p>
+      <p class="boot__title">LOADING…</p>
+      <div class="boot__bar"><span id="bootBar"></span></div>
+      <ul class="boot__log mono" id="bootLog"></ul>
+      <p class="boot__hint">klik untuk skip</p>
+    </div>
+  </div>
+
+  <!-- ===== LAYER DEKORASI GLOBAL ===== -->
+  <div class="fx-noise" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+  <aside class="rail rail--left" aria-hidden="true">
+    <span>DERO // PROXY PORTFOLIO</span><i></i><span>HDD-01 · 2026</span>
+  </aside>
+  <aside class="rail rail--right" aria-hidden="true">
+    <span class="rail__num" id="railNum">00</span>
+    <ul class="rail__ticks" id="railTicks"></ul>
+  </aside>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="nav" id="nav">
+    <a href="#home" class="nav__logo" aria-label="Kembali ke atas">
+      <span class="nav__logo-mark"><img src="assets/img/profile.jpg" alt=""></span>
+      <span class="nav__logo-text">DERO<em>//PROXY</em></span>
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="navMenu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav__menu" id="navMenu" aria-label="Navigasi utama">
+      <a href="#profile" class="nav__link"><small>01</small>Profile</a>
+      <a href="#stats" class="nav__link"><small>02</small>Stats</a>
+      <a href="#commissions" class="nav__link"><small>03</small>Labs</a>
+      <a href="#archive" class="nav__link"><small>04</small>Game UI</a>
+      <a href="#log" class="nav__link"><small>05</small>Log</a>
+      <a href="#comms" class="nav__link nav__link--cta"><small>06</small>Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+      <div class="hero__bg" aria-hidden="true">
+        <span class="hero__ghost">PROXY</span>
+        <span class="hero__scan"></span>
+      </div>
+      <div class="hero__content container">
+        <div class="hero__text">
+          <div class="hero__chips">
+            <p class="chip chip--lime"><i class="dot-live"></i> ONLINE</p>
+            <p class="chip" id="heroFaction"></p>
+          </div>
+          <h1 class="hero__title">
+            <span class="hero__title-small">Agent <b>No.<span id="heroNim"></span></b></span>
+            <span id="heroName" class="hero__title-name"></span>
+          </h1>
+          <p class="hero__typed"><span class="mono hero__prompt">&gt;</span> <span id="typed"></span><span class="caret">_</span></p>
+          <div class="hero__actions">
+            <a href="#commissions" class="btn btn--lime">Lihat Proyek <span aria-hidden="true">▶</span></a>
+            <a href="#archive" class="btn btn--ghost">Game UI <span aria-hidden="true">✦</span></a>
+          </div>
+          <ul class="hero__counters" id="heroCounters"></ul>
+        </div>
+
+        <div class="hero__visual">
+          <!-- badge teks melingkar -->
+          <svg class="orbit" viewBox="0 0 200 200" aria-hidden="true">
+            <defs><path id="orbitPath" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0" /></defs>
+            <text><textPath href="#orbitPath">FRONT-END ✦ GAME UI ✦ ANDROID ✦ PROXY DEV ✦ </textPath></text>
+          </svg>
+          <span class="sticker sticker--new" aria-hidden="true">NEW!</span>
+          <span class="sticker sticker--star" aria-hidden="true">★</span>
+          <span class="sticker sticker--tag mono" aria-hidden="true">LV.999</span>
+
+          <!-- Agent card ala character select -->
+          <article class="agent-card" id="agentCard" aria-label="Kartu profil">
+            <div class="agent-card__shine" aria-hidden="true"></div>
+            <div class="agent-card__top">
+              <span class="rank rank--S">S</span>
+              <span class="agent-card__code mono">AGENT FILE // <span id="cardNim"></span></span>
+            </div>
+            <div class="agent-card__portrait">
+              <span class="agent-card__initials" id="cardInitials"></span>
+              <img id="cardPhoto" alt="Foto profil Darren">
+              <div class="agent-card__halftone" aria-hidden="true"></div>
+              <span class="agent-card__corner mono" aria-hidden="true">ID-0108</span>
+            </div>
+            <div class="agent-card__plate">
+              <p class="agent-card__callsign" id="cardCallsign"></p>
+              <p class="agent-card__role" id="cardRole"></p>
+            </div>
+            <div class="agent-card__attrs">
+              <span class="attr"><i class="attr__dot attr__dot--lime"></i>Code</span>
+              <span class="attr"><i class="attr__dot attr__dot--orange"></i>Game UI</span>
+              <span class="attr"><i class="attr__dot attr__dot--cyan"></i>UI/UX</span>
+            </div>
+          </article>
+        </div>
+      </div>
+      <a href="#profile" class="hero__scroll mono" aria-label="Scroll ke profil">SCROLL <span>▼</span></a>
+    </section>
+
+    <!-- dua pita caution-tape menyilang -->
+    <div class="tapes" aria-hidden="true">
+      <div class="ticker ticker--lime"><div class="ticker__track" data-ticker="HTML,CSS GRID,FLEXBOX,JAVASCRIPT,DOM,RESPONSIVE,FIGMA,ROBLOX UI,KOTLIN,JETPACK COMPOSE,GIT"></div></div>
+      <div class="ticker ticker--dark"><div class="ticker__track ticker__track--rev" data-ticker="CAUTION,RESTRICTED,DO NOT CROSS,CAUTION,RESTRICTED,DO NOT CROSS"></div></div>
+    </div>
+
+    <!-- ===== 01 PROFILE / BIOGRAFI ===== -->
+    <section class="section container" id="profile" data-ghost="PROFILE">
+      <header class="section__head reveal">
+        <span class="section__num">01</span>
+        <div>
+          <p class="section__tape mono">FILE 01 · BIOGRAFI</p>
+          <h2 class="section__title">Agent Profile</h2>
+        </div>
+        <span class="barcode" aria-hidden="true"></span>
+      </header>
+
+      <div class="profile">
+        <!-- ID card -->
+        <article class="idcard reveal" aria-label="Kartu identitas">
+          <div class="idcard__head">
+            <span class="mono">PROXY ID CARD</span>
+            <span class="idcard__chip" aria-hidden="true"></span>
+          </div>
+          <div class="idcard__body">
+            <div class="idcard__photo">
+              <img id="idPhoto" alt="Foto profil Darren">
+            </div>
+            <dl class="idcard__info" id="profileInfo"></dl>
+          </div>
+          <div class="idcard__foot">
+            <span class="barcode barcode--long" aria-hidden="true"></span>
+            <span class="stamp" aria-hidden="true">VERIFIED</span>
+          </div>
+        </article>
+
+        <div class="profile__right">
+          <div class="panel panel--bracket profile__bio reveal" id="bio"></div>
+          <div class="panel profile__tools reveal">
+            <h3 class="mini-title mono">// TOOLS</h3>
+            <ul class="toolbelt" id="tools"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 02 STATS / SKILL ===== -->
+    <section class="section container" id="stats" data-ghost="STATS">
+      <header class="section__head reveal">
+        <span class="section__num">02</span>
+        <div>
+          <p class="section__tape mono">FILE 02 · SKILL & TECH STACK</p>
+          <h2 class="section__title">Agent Stats</h2>
+        </div>
+        <span class="barcode" aria-hidden="true"></span>
+      </header>
+
+      <div class="stats-wrap">
+        <div class="panel panel--bracket radar-panel reveal">
+          <h3 class="mini-title mono">// RADAR</h3>
+          <svg class="radar" id="radar" viewBox="0 0 300 300" role="img" aria-label="Grafik radar skill"></svg>
+          <p class="radar-panel__rank"><span class="rank rank--S">S</span><span>Overall <b id="overall"></b></span></p>
+        </div>
+        <div class="stats" id="skills"></div>
+      </div>
+
+      <div class="limit reveal">
+        <div class="limit__head">
+          <span class="limit__badge">LIMIT BREAK</span>
+          <p class="mono">LV MAX</p>
+        </div>
+        <div class="limit__grid" id="limitBreak"></div>
+      </div>
+    </section>
+
+    <!-- ===== 03 COMMISSIONS / PROJECTS ===== -->
+    <section class="section container" id="commissions" data-ghost="LABS">
+      <header class="section__head reveal">
+        <span class="section__num">03</span>
+        <div>
+          <p class="section__tape mono">FILE 03 · TUGAS LAB</p>
+          <h2 class="section__title">Commissions</h2>
+        </div>
+        <span class="barcode" aria-hidden="true"></span>
+      </header>
+      <div class="filters reveal" id="filters" role="group" aria-label="Filter proyek">
+        <button class="filter is-active" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter" data-filter="html" aria-pressed="false">HTML</button>
+        <button class="filter" data-filter="css" aria-pressed="false">CSS</button>
+        <button class="filter" data-filter="js" aria-pressed="false">JavaScript</button>
+        <button class="filter" data-filter="android" aria-pressed="false">Android</button>
+        <span class="filters__count mono" id="projectCount"></span>
+      </div>
+      <div class="projects" id="projects"></div>
+    </section>
+
+    <!-- ===== 04 GAME UI ARCHIVE (ROBLOX) ===== -->
+    <section class="section section--wide" id="archive" data-ghost="ARCHIVE">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__num">04</span>
+          <div>
+            <p class="section__tape mono">FILE 04 · GAME UI</p>
+            <h2 class="section__title">UI Archive</h2>
+          </div>
+          <span class="barcode" aria-hidden="true"></span>
+        </header>
+
+        <div class="archive">
+          <div class="archive__intro reveal">
+            <p class="archive__platform mono"><span class="pill-roblox">ROBLOX</span> UI ASSETS</p>
+            <h3 class="archive__game" id="gameTitle"></h3>
+            <p class="archive__summary" id="gameSummary"></p>
+            <ul class="archive__stats" id="gameStats"></ul>
+            <div class="filters filters--sm" id="workFilters" role="group" aria-label="Filter karya UI"></div>
+          </div>
+
+          <div class="viewer reveal" id="viewer">
+            <div class="viewer__frame" id="viewerFrame">
+              <span class="viewer__rarity mono" id="viewerRarity"></span>
+              <span class="viewer__index mono" id="viewerIndex"></span>
+              <button class="viewer__img-btn" id="viewerOpen" aria-label="Perbesar gambar">
+                <img id="viewerImg" alt="">
+              </button>
+              <button class="viewer__nav viewer__nav--prev" id="viewerPrev" aria-label="Sebelumnya">◀</button>
+              <button class="viewer__nav viewer__nav--next" id="viewerNext" aria-label="Berikutnya">▶</button>
+            </div>
+            <div class="viewer__caption">
+              <h4 id="viewerTitle"></h4>
+              <span class="chip" id="viewerCat"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="filmstrip reveal" id="filmstrip" role="list" aria-label="Daftar karya UI"></div>
+      </div>
+    </section>
+
+    <!-- ===== 05 MISSION LOG / TIMELINE ===== -->
+    <section class="section container" id="log" data-ghost="LOG">
+      <header class="section__head reveal">
+        <span class="section__num">05</span>
+        <div>
+          <p class="section__tape mono">FILE 05 · PERJALANAN BELAJAR</p>
+          <h2 class="section__title">Mission Log</h2>
+        </div>
+        <span class="barcode" aria-hidden="true"></span>
+      </header>
+      <ol class="timeline" id="timeline"></ol>
+    </section>
+
+    <!-- ===== 06 COMMS / KONTAK ===== -->
+    <section class="section container" id="comms" data-ghost="CONTACT">
+      <header class="section__head reveal">
+        <span class="section__num">06</span>
+        <div>
+          <p class="section__tape mono">FILE 06 · KONTAK</p>
+          <h2 class="section__title">Comms Channel</h2>
+        </div>
+        <span class="barcode" aria-hidden="true"></span>
+      </header>
+
+      <div class="cta-banner reveal">
+        <p class="cta-banner__kicker mono">STATUS: AVAILABLE</p>
+        <p class="cta-banner__title">Open for commission</p>
+        <a href="#contactForm" class="btn btn--dark">Kirim Pesan ▶</a>
+      </div>
+
+      <div class="comms reveal">
+        <ul class="panel panel--bracket comms__list" id="contactList"></ul>
+        <form class="panel comms__form" id="contactForm" novalidate>
+          <p class="mono comms__form-head">&gt; MESSAGE <span class="dot-live"></span></p>
+          <label>Nama
+            <input type="text" name="name" required placeholder="Proxy name" autocomplete="name">
+          </label>
+          <label>Pesan
+            <textarea name="message" rows="4" required placeholder="Tulis pesanmu…"></textarea>
+          </label>
+          <button type="submit" class="btn btn--lime">Kirim ▶</button>
+          <p class="comms__status mono" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__giant" aria-hidden="true" id="footerGiant"></p>
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> <span id="footerName"></span> · Built with HTML, CSS & JavaScript</p>
+      <a href="#home" class="mono">BACK TO TOP ▲</a>
+    </div>
+  </footer>
+
+  <!-- ===== PROJECT MODAL ===== -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__window">
+      <header class="modal__head">
+        <div>
+          <p class="mono modal__code" id="modalCode"></p>
+          <h3 class="modal__title" id="modalTitle"></h3>
+        </div>
+        <button class="modal__close" data-close aria-label="Tutup">✕</button>
+      </header>
+      <div class="modal__body">
+        <div class="modal__media">
+          <div class="tabs" id="modalTabs" role="tablist"></div>
+          <div class="modal__stage" id="modalStage"></div>
+        </div>
+        <aside class="modal__info" id="modalInfo"></aside>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== LIGHTBOX (Game UI) ===== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Pratinjau gambar" hidden>
+    <button class="modal__close lightbox__close" data-lb-close aria-label="Tutup">✕</button>
+    <img id="lightboxImg" alt="">
+    <p class="lightbox__cap mono" id="lightboxCap"></p>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
