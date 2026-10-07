@@ -208,7 +208,7 @@ function renderArchive() {
   $("#gameTitle").textContent = SHOWCASE.title;
   $("#gameSummary").textContent = SHOWCASE.summary;
   const stats = [
-    { value: WORKS.length, label: "Screens" },
+    { value: WORKS.length, label: "Items" },
     { value: Object.keys(WORK_CATEGORIES).length - 1, label: "Kategori" },
     { value: WORKS.filter((w) => w.rarity === "legendary" || w.rarity === "mythic").length, label: "Rare+" },
   ];

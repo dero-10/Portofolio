@@ -50,7 +50,7 @@ const TIMELINE = [
   { code: "EP.04", title: "CSS Grid & Layout", text: "Grid presisi dan layout responsif.", tag: "CSS" },
   { code: "EP.05", title: "JavaScript DOM", text: "Elemen dinamis dan toggle animasi.", tag: "JS" },
   { code: "EP.06", title: "Jetpack Compose", text: "Aplikasi Android pertama.", tag: "MOBILE" },
-  { code: "SP.01", title: "Game UI", text: "Menu, popup, reward, HUD.", tag: "GAME UI" },
+  { code: "SP.01", title: "Sword Inventory", text: "UI game Roblox, v5 sampai v10.", tag: "GAME UI" },
   { code: "EP.??", title: "Next", text: "Coming soon.", tag: "SOON" },
 ];
 
@@ -132,40 +132,36 @@ const PROJECTS = [
   },
 ];
 
-/* UI game — "UI Archive" (frame dari Figma UI Census) */
+/* UI game — "UI Archive" (Sword Inventory v5 — v10 dari Figma) */
 const SHOWCASE = {
-  title: "Game UI",
+  title: "Sword Inventory",
   platform: "Roblox",
-  summary: "UI dari game Roblox yang saya kerjakan.",
+  summary: "UI inventory pedang game Roblox, didesain di Figma dari v5 sampai v10.",
 };
 
-const ui = (id, title, cat, rarity) => ({ id, title, cat, rarity, img: `assets/img/game-ui/${id}.webp` });
+const ui = (id, title, cat, rarity, dir = "game-ui") => ({ id, title, cat, rarity, img: `assets/img/${dir}/${id}.webp` });
 
 const WORKS = [
-  ui("inventory", "Inventory", "menu", "legendary"),
-  ui("reveal-mythic", "Reward — Mythic", "reward", "mythic"),
-  ui("reveal-legendary", "Reward — Legendary", "reward", "legendary"),
-  ui("reveal-epic", "Reward — Epic", "reward", "epic"),
-  ui("ranks", "Ranks", "menu", "legendary"),
-  ui("upgrades", "Upgrades", "menu", "epic"),
-  ui("index", "Index", "menu", "epic"),
-  ui("items", "Items", "menu", "rare"),
-  ui("potion", "Brewing", "menu", "rare"),
-  ui("reforge", "Reforge", "menu", "rare"),
-  ui("market", "Market", "menu", "rare"),
-  ui("teleport", "Teleport", "menu", "rare"),
-  ui("crate", "Crate Picker", "menu", "common"),
-  ui("settings", "Settings", "menu", "common"),
-  ui("welcome", "Welcome Back", "popup", "legendary"),
-  ui("rank-benefits", "Rank Benefits", "popup", "epic"),
-  ui("tutorial-card", "Tutorial", "popup", "rare"),
-  ui("tutorial-step", "Tutorial Step", "popup", "common"),
-  ui("skill-check", "Skill Check", "hud", "epic"),
-  ui("victory", "Victory", "hud", "epic"),
-  ui("potion-pouch", "Pouch", "hud", "rare"),
-  ui("menu-rail", "Menu Rail", "hud", "common"),
-  ui("hp-plate", "HP Plate", "hud", "common"),
-  ui("coins", "Wallet", "hud", "common"),
+  ui("v10-cards", "v10 — Cards", "screen", "mythic"),
+  ui("v10-rack", "v10 — Rack", "screen", "mythic"),
+  ui("v9-rack", "v9 — Cartridge Rack", "screen", "legendary"),
+  ui("v9-compare", "v9 — VS Equipped", "screen", "legendary"),
+  ui("v8-icons", "v8 — Icons", "screen", "legendary"),
+  ui("v8-cards", "v8 — Cards", "screen", "legendary"),
+  ui("v7", "v7 — Armory Ledger", "screen", "rare"),
+  ui("v6", "v6 — Hero Stage", "screen", "rare"),
+  ui("v5", "v5 — Sword Storage", "screen", "common"),
+  ui("v8-parts", "v8 — Parts Board", "asset", "epic"),
+  ui("v9-parts", "v9 — Parts Board", "asset", "epic"),
+  ui("v8g-kit", "v8G — UI Kit", "asset", "epic"),
+  ui("sword-1", "Model 01", "model", "legendary", "models"),
+  ui("sword-2", "Model 02", "model", "mythic", "models"),
+  ui("sword-5", "Model 03", "model", "epic", "models"),
+  ui("sword-4", "Model 04", "model", "legendary", "models"),
+  ui("sword-7", "Model 05", "model", "epic", "models"),
+  ui("sword-3", "Model 06", "model", "rare", "models"),
+  ui("sword-8", "Model 07", "model", "rare", "models"),
+  ui("sword-6", "Model 08", "model", "common", "models"),
 ];
 
-const WORK_CATEGORIES = { all: "All", menu: "Menu", popup: "Popup", reward: "Reward", hud: "HUD" };
+const WORK_CATEGORIES = { all: "All", screen: "Screen", asset: "Asset", model: "Model" };

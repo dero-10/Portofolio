@@ -12,7 +12,7 @@ Design system: [Figma — DERO Proxy Portfolio](https://www.figma.com/design/jvb
 | 01 | Agent Profile | Biografi, ID card, tools |
 | 02 | Agent Stats | Radar skill, stat bar, Limit Break |
 | 03 | Commissions | Tugas lab — live preview, video demo, source code |
-| 04 | UI Archive | UI game Roblox (Figma UI Census) — viewer & filmstrip |
+| 04 | UI Archive | UI Sword Inventory v5 — v10 (Figma), aset & model pedang |
 | 05 | Mission Log | Timeline belajar |
 | 06 | Comms Channel | Kontak |
 
@@ -32,7 +32,8 @@ css/style.css       styling (design tokens dari Figma, komponen, responsive)
 js/data.js          semua konten portofolio
 js/main.js          render konten & interaksi
 assets/img/         foto profil, screenshot
-assets/img/game-ui/ frame UI game (UI Census)
+assets/img/game-ui/ layar UI Sword Inventory v5 — v10
+assets/img/models/   model pedang dari Figma
 labs/               tugas lab asli
 ```
 
