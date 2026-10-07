@@ -208,7 +208,7 @@ function renderArchive() {
   $("#gameTitle").textContent = SHOWCASE.title;
   $("#gameSummary").textContent = SHOWCASE.summary;
   const stats = [
-    { value: WORKS.length, label: "Assets" },
+    { value: WORKS.length, label: "Screens" },
     { value: Object.keys(WORK_CATEGORIES).length - 1, label: "Kategori" },
     { value: WORKS.filter((w) => w.rarity === "legendary" || w.rarity === "mythic").length, label: "Rare+" },
   ];
@@ -240,7 +240,7 @@ function showWork(index, animate = true) {
 
   const apply = () => {
     img.src = w.img;
-    img.alt = `${w.title} — aset UI game`;
+    img.alt = `${w.title} — UI game`;
     img.classList.remove("is-swapping");
   };
   if (animate && !reduceMotion) {

@@ -50,7 +50,7 @@ const TIMELINE = [
   { code: "EP.04", title: "CSS Grid & Layout", text: "Grid presisi dan layout responsif.", tag: "CSS" },
   { code: "EP.05", title: "JavaScript DOM", text: "Elemen dinamis dan toggle animasi.", tag: "JS" },
   { code: "EP.06", title: "Jetpack Compose", text: "Aplikasi Android pertama.", tag: "MOBILE" },
-  { code: "SP.01", title: "Game UI Kit", text: "Button, panel, reward, HUD.", tag: "GAME UI" },
+  { code: "SP.01", title: "Game UI", text: "Menu, popup, reward, HUD.", tag: "GAME UI" },
   { code: "EP.??", title: "Next", text: "Coming soon.", tag: "SOON" },
 ];
 
@@ -132,28 +132,40 @@ const PROJECTS = [
   },
 ];
 
-/* Aset UI game — "UI Archive" */
+/* UI game — "UI Archive" (frame dari Figma UI Census) */
 const SHOWCASE = {
-  title: "Game UI Kit",
+  title: "Game UI",
   platform: "Roblox",
-  summary: "Aset UI dari game Roblox yang saya kerjakan.",
+  summary: "UI dari game Roblox yang saya kerjakan.",
 };
 
+const ui = (id, title, cat, rarity) => ({ id, title, cat, rarity, img: `assets/img/game-ui/${id}.webp` });
+
 const WORKS = [
-  { id: "buttons", title: "Buttons", cat: "kit", rarity: "legendary", img: "assets/img/game-ui/buttons.webp" },
-  { id: "inventory", title: "Inventory Panel", cat: "panel", rarity: "legendary", img: "assets/img/game-ui/inventory.webp" },
-  { id: "reveal-mythic", title: "Reward — Mythic", cat: "reward", rarity: "mythic", img: "assets/img/game-ui/reveal-mythic.webp" },
-  { id: "reveal-legendary", title: "Reward — Legendary", cat: "reward", rarity: "legendary", img: "assets/img/game-ui/reveal-legendary.webp" },
-  { id: "zone-map", title: "Zone Map", cat: "panel", rarity: "epic", img: "assets/img/game-ui/zone-map.webp" },
-  { id: "tags", title: "Tags & Ribbons", cat: "kit", rarity: "epic", img: "assets/img/game-ui/tags.webp" },
-  { id: "missions", title: "Missions", cat: "panel", rarity: "rare", img: "assets/img/game-ui/missions.webp" },
-  { id: "color-picker", title: "Color Picker", cat: "panel", rarity: "rare", img: "assets/img/game-ui/color-picker.webp" },
-  { id: "tutorial", title: "Tutorial Card", cat: "panel", rarity: "rare", img: "assets/img/game-ui/tutorial-card.webp" },
-  { id: "toggles", title: "Toggles & Currency", cat: "kit", rarity: "rare", img: "assets/img/game-ui/toggles.webp" },
-  { id: "victory", title: "Victory Banner", cat: "reward", rarity: "epic", img: "assets/img/game-ui/victory.webp" },
-  { id: "popup-buttons", title: "Popup Triggers", cat: "kit", rarity: "common", img: "assets/img/game-ui/popup-buttons.webp" },
-  { id: "hp-plate", title: "HP Plate", cat: "hud", rarity: "common", img: "assets/img/game-ui/hp-plate.webp" },
-  { id: "toast", title: "Toast", cat: "hud", rarity: "common", img: "assets/img/game-ui/toast.webp" },
+  ui("inventory", "Inventory", "menu", "legendary"),
+  ui("reveal-mythic", "Reward — Mythic", "reward", "mythic"),
+  ui("reveal-legendary", "Reward — Legendary", "reward", "legendary"),
+  ui("reveal-epic", "Reward — Epic", "reward", "epic"),
+  ui("ranks", "Ranks", "menu", "legendary"),
+  ui("upgrades", "Upgrades", "menu", "epic"),
+  ui("index", "Index", "menu", "epic"),
+  ui("items", "Items", "menu", "rare"),
+  ui("potion", "Brewing", "menu", "rare"),
+  ui("reforge", "Reforge", "menu", "rare"),
+  ui("market", "Market", "menu", "rare"),
+  ui("teleport", "Teleport", "menu", "rare"),
+  ui("crate", "Crate Picker", "menu", "common"),
+  ui("settings", "Settings", "menu", "common"),
+  ui("welcome", "Welcome Back", "popup", "legendary"),
+  ui("rank-benefits", "Rank Benefits", "popup", "epic"),
+  ui("tutorial-card", "Tutorial", "popup", "rare"),
+  ui("tutorial-step", "Tutorial Step", "popup", "common"),
+  ui("skill-check", "Skill Check", "hud", "epic"),
+  ui("victory", "Victory", "hud", "epic"),
+  ui("potion-pouch", "Pouch", "hud", "rare"),
+  ui("menu-rail", "Menu Rail", "hud", "common"),
+  ui("hp-plate", "HP Plate", "hud", "common"),
+  ui("coins", "Wallet", "hud", "common"),
 ];
 
-const WORK_CATEGORIES = { all: "All", kit: "Kit", panel: "Panel", reward: "Reward", hud: "HUD" };
+const WORK_CATEGORIES = { all: "All", menu: "Menu", popup: "Popup", reward: "Reward", hud: "HUD" };
